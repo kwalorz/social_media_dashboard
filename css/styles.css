@@ -47,7 +47,14 @@
 }
 
 body {
-  background: var(--fb-bgcolor);
+  background: linear-gradient(
+      45deg,
+      rgba(51, 51, 51, 1) 0%,
+      rgba(175, 173, 173, 1) 50%,
+      rgba(209, 203, 203, 1) 100%
+    )
+    no-repeat center center fixed;
+
   font-family: Arial, Helvetica, sans-serif;
   color: var(--fb-black);
 }
@@ -236,6 +243,9 @@ header {
 
 .sidenav {
   width: 25%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  background: rgba(209, 203, 203, 1);
 }
 .sidenav__item {
   display: flex;
@@ -248,7 +258,7 @@ header {
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  margin-right: 20px;
+  margin: 20px;
   box-shadow: 0px 0px 5px var(--shadow-color);
   object-fit: cover;
   object-position: center;
@@ -267,6 +277,7 @@ header {
   align-items: center;
   font-size: 25px;
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .sidenav__item-notifications {
@@ -303,6 +314,10 @@ header {
 .sidenav__item-icon .fab {
   color: var(--fb-blue);
 }
+
+.sidenav .fa-sort-down {
+  margin-left: 5px;
+}
 .sidenav__item-icon--circle .fas,
 .sidenav__item-icon--circle .fab {
   color: var(--fb-black);
@@ -321,9 +336,14 @@ header {
 
 .sidenav__heading-title {
   display: block;
+  margin-left: 20px;
   color: var(--light-color-text);
   font-size: 1.1rem;
   margin-bottom: 15px;
+}
+
+.sidenav__heading-title .fa-users {
+  margin-right: 10px;
 }
 
 .feed {
@@ -344,8 +364,8 @@ header {
 .stories__video-container {
   overflow: hidden;
   width: 120px;
-  height: 200px;
-  border-radius: 5px;
+  height: 1020pxpx;
+  border-radius: 50%;
   background: var(--stories-bg);
   position: relative;
   box-shadow: 0px 2px 2px 0px var(--fb-black);
@@ -361,7 +381,8 @@ header {
   object-fit: cover;
   object-position: center;
   width: 125px;
-  height: 200px;
+  height: 125px;
+  border-radius: 50%;
   opacity: 0.2;
   transform: opacity 0.5s ease-in-out;
 }
@@ -635,53 +656,6 @@ header {
 
 .photopost__link .fas {
   margin-right: 10px;
-}
-
-.floatingmsg {
-  position: fixed;
-  bottom: 0;
-  right: 20px;
-}
-
-.floatingmsg__bubble {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0px 5px 10px 0px var(--shadow-color);
-  background: var(--button-link);
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-}
-
-.floatingmsg__bubble img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.floatingmsg__bubble:hover .fa-edit {
-  color: var(--fb-blue);
-}
-
-.floatingmsg__notification {
-  background: var(--fb-red);
-  color: white;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  font-weight: 700;
-  z-index: 3;
 }
 
 @media only screen and (max-width: 1300px) {
